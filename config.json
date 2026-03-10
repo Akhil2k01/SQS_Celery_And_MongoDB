@@ -1,0 +1,13 @@
+{
+    "AWS_REGION": "us-east-1",
+    "MONGO_SERVER": "localhost",
+    "MONGO_PORT": 27017,
+    "MONGO_USERNAME": "demouser1",
+    "MONGO_PWD": "password",
+    "CM_CLOSE_LOOP_MONGO_DB": "cm_close_loop_validation",
+    "REDBEAT_SCHEDULER": {
+        "BROKER_URL": "redis://localhost:6379/5",
+        "RESULT_BACKEND": "redis://localhost:6379/6",
+        "REDBEAT_REDIS_URL": "redis://localhost:6379/7"
+    }
+}
