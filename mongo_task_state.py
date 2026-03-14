@@ -3,7 +3,7 @@ from models import SchedulerEntry
 import uuid
 from datetime import datetime, timezone
 
-class TopologyHelper(object):
+class TaskHelper(object):
     @staticmethod
     def insert_into_scheduler_entry(topology_uuid, username, model_name, execution_uuid, is_prod_execution):
         """
@@ -26,9 +26,9 @@ class TopologyHelper(object):
             print(f"Error inserting entry: {e}")
 
     @classmethod
-    def split_and_store_topology_cm(cls, topology_uuid, username, model_name, execution_uuid, is_prod_execution):
+    def store_mongo_task_state(cls, topology_uuid, username, model_name, execution_uuid, is_prod_execution):
         """
-        Processes and stores topology data for execution.
+        Stores task state data for execution.
         """
         execution_uuid = str(uuid.uuid4())  
         TopologyHelper.insert_into_scheduler_entry(topology_uuid, username, model_name, execution_uuid, is_prod_execution)
